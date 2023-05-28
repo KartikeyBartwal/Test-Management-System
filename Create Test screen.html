@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Front End Engineering Lab Work</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="test management style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#">Test Management System</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <h1 style="text-align: center;">Create and set up online tests</h1>
+        <form action="make questions.html">
+            <label for="test-name">Test Name:</label>
+            <input type="text" id="test-name" name="test-name"><br><br>
+
+            <label for="test-description">Test Description:</label>
+            <textarea id="test-description" name="test-description" rows="5" cols="80" required></textarea><br><br>
+
+            <label for="test-timespan"><b>Timespan of the test (in minutes):</b></label>
+            <input type="number " id="test-timespan " name="test-timespan "><br><br>
+
+            <label for="test-description">Rules to be read by the candidates</label>
+            <textarea id="test-description " name="test-description " rows="5 " cols="80 " required></textarea><br><br>
+
+            <button type="submit " style="margin-left: 370px; ">Set up questions</button>
+            <button type="reset ">Reset</button>
+        </form>
+    </main>
+
+    <footer class="bg-dark text-center text-white ">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0 ">
+            <!-- Section: Social media -->
+            <section class="mb-4 ">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1 " href="#! " role="button "><i class="fab fa-facebook-f "></i
+                ></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1 " href="#! " role="button "><i class="fab fa-twitter "></i
+                ></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1 " href="#! " role="button "><i class="fab fa-google "></i
+                ></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1 " href="#! " role="button "><i class="fab fa-instagram "></i
+                ></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1 " href="#! " role="button "><i class="fab fa-linkedin-in "></i
+                ></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1 " href="#! " role="button "><i class="fab fa-github "></i
+                ></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2); opacity: 0.9; text-align: center; ">
+            © 2023 Copyright: FEE Project Team 10
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+</body>
+
+</html>

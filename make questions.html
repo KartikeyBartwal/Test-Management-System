@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="make questions style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#">Test Management System</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Question 1</h1>
+        <label for="problem">Problem:</label>
+        <textarea id="problem" name="problem" rows="5" cols="80"></textarea><br><br>
+
+        <label for="option-a">Option A:</label>
+        <input type="text" id="option-a" name="option-a"><br><br>
+        <label for="option-b">Option B:</label>
+        <input type="text" id="option-b" name="option-b"><br><br>
+        <label for="option-c">Option C:</label>
+        <input type="text" id="option-c" name="option-c"><br><br>
+        <label for="option-d">Option D:</label>
+        <input type="text" id="option-d" name="option-d"><br><br>
+        <label for="correct-option">Correct Option:</label>
+        <select id="correct-option" name="correct-option">
+		<option value="a">A</option>
+		<option value="b">B</option>
+		<option value="c">C</option>
+		<option value="d">D</option>
+	</select><br><br>
+        <button type="button" id="add-question">Add Question</button>
+        <button type="button" id="delete-question">Delete Question</button>
+        <button type="button" id="reset-question">Reset Question</button>
+        <button type="button" id="done">Done</button>
+
+        <script>
+            var button = document.getElementById("done");
+            button.addEventListener("click", function() {
+                window.location.href = "Home Screen.html"; // Replace with the desired HTML page filename
+            });
+        </script>
+    </main>
+
+    <script>
+        const main = document.querySelector('main');
+        const addQuestionButton = document.querySelector('#add-question');
+
+        // Add an event listener to the add question button
+        addQuestionButton.addEventListener('click', () => {
+            // Create a new question container element
+            const questionContainer = document.createElement('div');
+            questionContainer.classList.add('question-container');
+
+            // Create a new question title element
+            const questionTitle = document.createElement('h1');
+            questionTitle.textContent = 'Question ' + (main.querySelectorAll('.question-container').length + 1);
+
+            // Create a new problem label element
+            const problemLabel = document.createElement('label');
+            problemLabel.setAttribute('for', 'problem');
+            problemLabel.textContent = 'Problem:';
+
+            // Create a new problem textarea element
+            const problemTextarea = document.createElement('textarea');
+            problemTextarea.setAttribute('id', 'problem');
+            problemTextarea.setAttribute('name', 'problem');
+            problemTextarea.setAttribute('rows', '5');
+            problemTextarea.setAttribute('cols', '80');
+
+            // Create new option label and input elements for options A, B, C, and D
+            const optionALabel = document.createElement('label');
+            optionALabel.setAttribute('for', 'option-a');
+            optionALabel.textContent = 'Option A:';
+
+            const optionAInput = document.createElement('input');
+            optionAInput.setAttribute('type', 'text');
+            optionAInput.setAttribute('id', 'option-a');
+            optionAInput.setAttribute('name', 'option-a');
+
+            const optionBLabel = document.createElement('label');
+            optionBLabel.setAttribute('for', 'option-b');
+            optionBLabel.textContent = 'Option B:';
+
+            const optionBInput = document.createElement('input');
+            optionBInput.setAttribute('type', 'text');
+            optionBInput.setAttribute('id', 'option-b');
+            optionBInput.setAttribute('name', 'option-b');
+
+            const optionCLabel = document.createElement('label');
+            optionCLabel.setAttribute('for', 'option-c');
+            optionCLabel.textContent = 'Option C:';
+
+            const optionCInput = document.createElement('input');
+            optionCInput.setAttribute('type', 'text');
+            optionCInput.setAttribute('id', 'option-c');
+            optionCInput.setAttribute('name', 'option-c');
+
+            const optionDLabel = document.createElement('label');
+            optionDLabel.setAttribute('for', 'option-d');
+            optionDLabel.textContent = 'Option D:';
+
+            const optionDInput = document.createElement('input');
+            optionDInput.setAttribute('type', 'text');
+            optionDInput.setAttribute('id', 'option-d');
+            optionDInput.setAttribute('name', 'option-d');
+
+            // Create a new correct option label and select element
+            const correctOptionLabel = document.createElement('label');
+            correctOptionLabel.setAttribute('for', 'correct-option');
+            correctOptionLabel.textContent = 'Correct Option:';
+
+            const correctOptionSelect = document.createElement('select');
+            correctOptionSelect.setAttribute('id', 'correct-option');
+            correctOptionSelect.setAttribute('name', 'correct-option');
+
+            // Add the options to the correct option select element
+            const optionValues = ['a', 'b', 'c', 'd'];
+            const optionTexts = ['A', 'B', 'C', 'D'];
+            optionValues.forEach((value, index) => {
+                const option = document.createElement('option');
+                option.setAttribute('value', value);
+                option.textContent = optionTexts[index];
+                correctOptionSelect.appendChild(option);
+            });
+
+            // Create a new add, delete and reset button
+            const addQuestionButton = document.createElement('button');
+            addQuestionButton.setAttribute('type', 'button');
+            addQuestionButton.setAttribute('id', 'add-question');
+            addQuestionButton.textContent = 'Add Question';
+
+            const deleteQuestionButton = document.createElement('button');
+            deleteQuestionButton.setAttribute('type', 'button');
+            deleteQuestionButton.setAttribute('id', 'delete-question');
+            deleteQuestionButton.textContent = 'Delete Question';
+
+            const resetQuestionButton = document.createElement('button');
+            resetQuestionButton.setAttribute('type', 'button');
+            resetQuestionButton.setAttribute('id', 'reset-question');
+            resetQuestionButton.textContent = 'Reset Question';
+
+            // Append all elements to the question container
+            questionContainer.appendChild(questionTitle);
+            questionContainer.appendChild(problemLabel);
+            questionContainer.appendChild(problemTextarea);
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(optionALabel);
+            questionContainer.appendChild(optionAInput);
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(optionBLabel);
+            questionContainer.appendChild(optionBInput);
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(optionCLabel);
+            questionContainer.appendChild(optionCInput);
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(optionDLabel);
+            questionContainer.appendChild(optionDInput);
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(correctOptionLabel);
+            questionContainer.appendChild(correctOptionSelect);
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(document.createElement('br'));
+            questionContainer.appendChild(addQuestionButton);
+            questionContainer.appendChild(deleteQuestionButton);
+            questionContainer.appendChild(resetQuestionButton);
+
+            // Append the question container to the main element
+            main.appendChild(questionContainer);
+        });
+    </script>
+</body>
+
+</html>

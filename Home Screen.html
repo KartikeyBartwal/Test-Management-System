@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Global styles */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a68bb;
+            background-image: url('main image.jpg');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        /* Navigation Bar */
+        
+        nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+        }
+        
+        .logo a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-right: 10px;
+        }
+        
+        .nav-links li:last-child {
+            margin-right: 0;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4eacff;
+        }
+        /* Main Content */
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        
+        .button {
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .button img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: opacity 0.3s;
+        }
+        
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .button:hover img {
+            opacity: 0.8;
+        }
+        /* Footer */
+        
+        .footer {
+            background-color: rgba(0, 0, 0, 0.2);
+            opacity: 0.9;
+            text-align: center;
+            width: 100%;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #fff;
+        }
+        /* Media Queries */
+        
+        @media (max-width: 768px) {
+            .logo a {
+                font-size: 20px;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-links li {
+                margin: 5px 0;
+            }
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <a href="#">Test Management System</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="button-container">
+        <button class="button" onclick="location.href='Create Test screen.html'">
+            <img src="create test.gif" alt="Create Test">
+        </button>
+        <button class="button" onclick="location.href='m.html'">
+            <img src="take test.gif" alt="Take Test">
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2023 Copyright:
+            <span style="font-weight: bold;">FEE Project Team 10</span>
+        </p>
+    </div>
+</body>
+
+</html>

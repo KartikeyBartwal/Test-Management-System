@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container Done-container">
+    </div>
+    <div class="form-container Next-container">
+        <form onsubmit="return redirectToSubject()">
+            <h2>Fill Your Information</h2>
+            <span>use your college email id</span>
+            <input type="text" placeholder="Name"/>
+            <input type="text" placeholder="Roll No."/>
+            <input type="text" placeholder="Section"/>
+            <input type="email" placeholder="Email"/>
+            <input type="text" placeholder="Phone Number"/>
+            <h4>Choose Your Subject</h4>
+            <select>
+                <option>C-Programming</option>
+                <option>Python</option>
+                <option>HTML</option>
+
+            </select>
+        </br></br>
+
+            <button>Next</button>
+        </form>
+
+    </div>
+    <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Let's Start The Test</h1>
+                    <button class="ghost" id="Next">Next</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts.js"></script>
+    
+</body>
+</html>

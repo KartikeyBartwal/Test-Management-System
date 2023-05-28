@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="take test style.css" rel="stylesheet">
+    <script defer src="take test js.js"></script>
+    <title>Take test</title>
+    <style>
+        #timer {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="timer">2:00 minutes</div>
+        <!-- Timer element -->
+
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+    </div>
+
+    <script>
+        // Timer functionality
+        const timerElement = document.getElementById('timer');
+        const minutes = 2;
+        let secondsRemaining = minutes * 60;
+
+        function updateTimer() {
+            const minutesRemaining = Math.floor(secondsRemaining / 60);
+            const seconds = secondsRemaining % 60;
+            timerElement.textContent = `${minutesRemaining}:${seconds.toString().padStart(2, '0')}`;
+            secondsRemaining--;
+
+            if (secondsRemaining < 0) {
+                // Timer has reached zero
+                clearInterval(timerInterval);
+                timerElement.textContent = 'Time up!';
+                // Add code here to handle timer expiration
+            }
+        }
+
+        // Start the timer
+        const timerInterval = setInterval(updateTimer, 1000);
+    </script>
+</body>
+
+</html>
